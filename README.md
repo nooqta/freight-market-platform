@@ -1,5 +1,6 @@
 # Freight Marketplace Platform
 
+Exploring the Refine framework. Project took 3 hours to learn, develop and deploy.
 
 This project was generated with [superplate](https://github.com/pankod/superplate).
 
