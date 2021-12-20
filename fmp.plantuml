@@ -1,0 +1,66 @@
+@startuml
+class Shipper {
+    Company company
+    Addresse[] addresses
+    Shipment[] shipments
+    ShipmentRequest[] shipmentRequests
+    User[] users
+}
+class Carrier {
+    Shipment[] shipments
+    ShipmentRequest[] shipmentRequests
+    Offer[] offers
+    Shipper[] shippers
+}
+class ShipmentRequest {
+    Shipper shipper
+    Address address
+    Offer[] offerss
+}
+class Company {
+    name
+}
+
+class Address {
+    Company company
+    Shipper shipper
+    string street
+    string city
+    string state
+    string zip
+    string country
+}
+class User {
+    name: string
+    email: string
+    password: string
+    phone: string
+    Company company
+    Shipper shipper
+}
+class Shipment {
+    Shipper shipper
+    Offer offer
+    Carrier carrier
+    Address address
+    string status
+    string trackingNumber
+    string date
+    string time
+}
+class Offer {
+    ShipmentRequest shipmentRequest
+    Carrier carrier
+    string price
+    string date
+    string time
+}
+Company <|-- Shipper
+Company o-- User
+Company o-- Address
+Shipper -- Shipment
+Shipment -- ShipmentRequest
+Carrier -- Shipment
+Carrier -- Offer
+Offer -- Shipment
+@enduml
