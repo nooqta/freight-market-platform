@@ -1,4 +1,4 @@
-# tutorial
+# Freight Marketplace Platform
 
 
 This project was generated with [superplate](https://github.com/pankod/superplate).
