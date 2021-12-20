@@ -10,6 +10,7 @@ import {
     Input,
     Button,
     Checkbox,
+    Alert,
 } from "@pankod/refine";
 import "./styles.css";
 
@@ -33,7 +34,9 @@ export const Login: React.FC = () => {
             Sign in your account
         </Title>
     );
-
+    const onClose = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+        console.log(e, 'I was closed.');
+    };
     return (
         <AntdLayout className="layout">
             <Row
@@ -49,6 +52,12 @@ export const Login: React.FC = () => {
                             <img src="https://www.transportr.com/assets/images/logo.png" alt="Freight Marketplace Platform" />
                         </div>
                         <Card title={CardTitle} headStyle={{ borderBottom: 0 }}>
+                            <Alert
+                                message="Login: admin/password"
+                                type="info"
+                                closable
+                                onClose={onClose}
+                            />
                             <Form<ILoginForm>
                                 layout="vertical"
                                 form={form}
@@ -100,6 +109,7 @@ export const Login: React.FC = () => {
                                     <a
                                         style={{
                                             float: "right",
+                                            color: "#fcb040",
                                             fontSize: "12px",
                                         }}
                                         href="#"
@@ -108,6 +118,7 @@ export const Login: React.FC = () => {
                                     </a>
                                 </div>
                                 <Button
+                                    style={{ backgroundColor: "#fcb040", color: "#fff", border: "none" }}
                                     type="primary"
                                     size="large"
                                     htmlType="submit"
@@ -119,7 +130,7 @@ export const Login: React.FC = () => {
                             <div style={{ marginTop: 8 }}>
                                 <Text style={{ fontSize: 12 }}>
                                     Don’t have an account?{" "}
-                                    <a href="#" style={{ fontWeight: "bold" }}>
+                                    <a href="#" style={{ fontWeight: "bold", color: "#fcb040", }}>
                                         Sign up
                                     </a>
                                 </Text>

@@ -7,10 +7,14 @@ import {
     useNavigation,
     Grid,
     Icons,
+    useLogout,
+    useTranslate
 } from "@pankod/refine";
 import { antLayoutSider, antLayoutSiderMobile } from "./styles";
 
 export const CustomSider: React.FC = () => {
+    const { mutate: logout } = useLogout();
+    const translate = useTranslate();
     const [collapsed, setCollapsed] = useState<boolean>(false);
     const Title = useTitle();
     const { menuItems, selectedKey } = useMenu();
@@ -33,6 +37,10 @@ export const CustomSider: React.FC = () => {
                 selectedKeys={[selectedKey]}
                 mode="inline"
                 onClick={({ key }) => {
+                    if (key === "logout") {
+                        logout();
+                        return;
+                    }
                     if (!breakpoint.lg) {
                         setCollapsed(true);
                     }
@@ -65,7 +73,11 @@ export const CustomSider: React.FC = () => {
                         </Menu.Item>
                     );
                 })}
+                <Menu.Item key="logout" icon={<Icons.LogoutOutlined />}>
+                        {translate("buttons.logout", "Logout")}
+                    </Menu.Item>
             </Menu>
         </AntdLayout.Sider>
     );
 };
+
