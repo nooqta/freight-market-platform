@@ -1,5 +1,8 @@
 @startuml
 class Shipper {
+    string name
+    string address
+    string phone
     Company company
     Addresse[] addresses
     Shipment[] shipments
@@ -31,7 +34,8 @@ class Address {
     string country
 }
 class User {
-    name: string
+    first_name: string
+    last_name: string
     email: string
     password: string
     phone: string
