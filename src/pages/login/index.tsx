@@ -48,8 +48,8 @@ export const Login: React.FC = () => {
             >
                 <Col xs={22}>
                     <div className="container">
-                        <div className="imageContainer">
-                            <img src="https://www.transportr.com/assets/images/logo.png" alt="Freight Marketplace Platform" />
+                        <div className="imageContainer" style={{fontSize: "32px", fontWeight: "500", color: "#fcb045"}}>
+                            Transporter Marketplace
                         </div>
                         <Card title={CardTitle} headStyle={{ borderBottom: 0 }}>
                             <Alert
@@ -109,7 +109,7 @@ export const Login: React.FC = () => {
                                     <a
                                         style={{
                                             float: "right",
-                                            color: "#fcb040",
+                                            color: "#fcb045",
                                             fontSize: "12px",
                                         }}
                                         href="#"
@@ -118,7 +118,7 @@ export const Login: React.FC = () => {
                                     </a>
                                 </div>
                                 <Button
-                                    style={{ backgroundColor: "#fcb040", color: "#fff", border: "none" }}
+                                    style={{ backgroundColor: "#fcb045", color: "#fff", border: "none" }}
                                     type="primary"
                                     size="large"
                                     htmlType="submit"
@@ -130,7 +130,7 @@ export const Login: React.FC = () => {
                             <div style={{ marginTop: 8 }}>
                                 <Text style={{ fontSize: 12 }}>
                                     Don’t have an account?{" "}
-                                    <a href="#" style={{ fontWeight: "bold", color: "#fcb040", }}>
+                                    <a href="#" style={{ fontWeight: "bold", color: "#fcb045", }}>
                                         Sign up
                                     </a>
                                 </Text>
